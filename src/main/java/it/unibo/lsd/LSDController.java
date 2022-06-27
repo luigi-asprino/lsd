@@ -11,7 +11,7 @@ import java.io.StringWriter;
 @RestController
 public class LSDController {
 
-    @GetMapping("/lsd")
+    @GetMapping("/extract")
     public String lsd(@RequestParam(value = "url") String url, @RequestParam(value = "lang", defaultValue = "en", required = false) String lang) throws TemplateException, IOException {
         return PageBuilder.getInstance().getPage(ModelGenerator.getInstance().getModel(url, lang));
     }
