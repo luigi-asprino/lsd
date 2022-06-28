@@ -53,6 +53,18 @@
                     </ul>
             </dl>
             </#if>
+            <#if scheme.issued??>
+            <dl>
+                <dt>Issued:</dt>
+                <dd>${scheme.issued}</dd>
+            </dl>
+            </#if>
+            <#if scheme.modified??>
+            <dl>
+                <dt>Modified:</dt>
+                <dd>${scheme.modified}</dd>
+            </dl>
+            </#if>
       		<dl>
       		    <dt>Other visualisation:</dt>
             	<dd><a href="./source?url=${url}">Source</a></dd>
@@ -92,8 +104,9 @@
             	<h3>${concept.label}<sup title="class" class="type-c">concept</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#concepts">Concept ToC</a></span></h3>
             	<p><strong>IRI:</strong> ${concept.iri}</p>
 
-            	<#if concept.inScheme??><dl class="definedBy"><dt>in scheme</dt><dd><a href="${concept.inScheme}">${concept.inScheme}</a></dd></dl></#if>
             	<#if concept.definition??><div class="comment"><span class="markdown">${concept.definition}</span></div></#if>
+            	<#if concept.inScheme??><dl class="definedBy"><dt>in scheme</dt><dd><a href="${concept.inScheme}">${concept.inScheme}</a></dd></dl></#if>
+
 
                 <#if concept.broaderConcepts?size != 0>
                     <dl class="description"><dt>has broader concepts</dt>

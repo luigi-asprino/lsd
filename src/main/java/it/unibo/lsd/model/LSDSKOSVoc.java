@@ -6,7 +6,7 @@ import java.util.List;
 public class LSDSKOSVoc {
 
     private String uri;
-    private String title, description;
+    private String title, description, issued, modified;
     private List<LSDSKOSConcept> concepts, topConcepts=new ArrayList<>();
 
     public String getDescription() {
@@ -47,5 +47,21 @@ public class LSDSKOSVoc {
 
     public void setTopConcepts(List<LSDSKOSConcept> topConcepts) {
         this.topConcepts = topConcepts;
+    }
+
+    public String getIssued() {
+        return issued;
+    }
+
+    public void setIssued(String issued) {
+        this.issued = issued;
+    }
+
+    public String getModified() {
+        return modified;
+    }
+
+    public void setModified(String modified) {
+        this.modified = modified;
     }
 }
